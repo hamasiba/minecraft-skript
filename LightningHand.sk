@@ -16,4 +16,11 @@ command /godhand <text>:
 on rightclick:
     if {%player%.godhand} is "true":
         if {%player%.godhandon} is "true":
-            
+            strike lightning at the target block
+            send "&eLightning bolt!!" to player
+command /lightning:
+    trigger:
+        send "&eLightning &6plugin" to player
+        send "&c/godwhitelist [player id] [add|remove]" to player
+        send "&c/godhand [on|off]" to player
+        send "&cRight click -> Lightning!" to player
