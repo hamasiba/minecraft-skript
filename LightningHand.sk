@@ -1,0 +1,19 @@
+command /godwhitelist <player> <text>:
+    permission: op
+    trigger:
+        if arg 2 is "add":
+            set {%arg 1%.godhand} to "true"
+        if arg 2 is "remove":
+            set {%arg 1%.godhand} to "false"
+command /godhand <text>:
+    trigger:
+        if arg 1 is "on":
+            set {%player%.godhandon} to "true"
+            send "&eLightning &6Mode &rTrue."
+        if arg 1 is "off":
+            set {%player%.godhandon} to "false"
+            send "&eLightning &6Mode &rFlase."
+on rightclick:
+    if {%player%.godhand} is "true":
+        if {%player%.godhandon} is "true":
+            
