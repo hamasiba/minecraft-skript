@@ -1,0 +1,48 @@
+on right click:
+    player's tool is golden axe
+    name of player's tool is "&6| &e&lゴールデンハンマー &6|":
+    strike lightning at the target block
+    strike lightning at the target block
+    strike lightning at the target block
+    strike lightning at the target block
+    send "&e&lラ&6&lイ&e&lト&6&lニ&e&lン&6&lグ" to player
+on right click:
+    player has arrows
+    name of player's tool is "&6| &c&l連射弓 &6|"
+    cancel event
+    shoot an arrow from the player
+on right click:
+    player has arrows
+    name of player's tool is "&6| &7OLD&c&l連射弓 &6|"
+    cancel event
+    shoot an arrow from the player
+    remove 1 arrow from player
+on right click with :
+command /hamagive <player> <text>:
+    permission: hamasiba.give
+    aliases: /hg
+    trigger:
+        if arg 2 is "goldhummer":
+            give player golden axe of sharpness 1 named "&6| &b&l新&r・&e&lゴールデンハンマー &6|"
+            send "&c%arg 2% &rに &a[&6| &e&lゴールデンハンマー &6|&a] &rを付与しました！" to player
+            send "&e&lゴールデンハンマー &7をゲットした！" to arg 1
+        if arg 2 is "gh":
+            give player golden axe of sharpness 1 named "&6| &e&lゴールデンハンマー &6|"
+            send "&c%arg 2% &rに &a[&6| &b&l新&r・&e&lゴールデンハンマー &6|&a] &rを付与しました！" to player
+            send "&e&lゴールデンハンマー &7をゲットした！" to arg 1
+        if arg 2 is "oldlongbow":
+            give player bow of sharpness 1 named "&6| &7OLD&c&l連射弓 &6|"
+            send "&c%arg 2% &rに &a[&6&6| &7OLD&c&l連射弓 &6|&a] &rを付与しました！" to player
+            send "&7OLD&c&l連射弓 &7をゲットした！" to arg 1
+        if arg 2 is "olb":
+            give player bow of sharpness 1 named "&6| &7OLD&c&l連射弓 &6|"
+            send "&c%arg 2% &rに &a[&6&6| &7OLD&c&l連射弓 &6|&a] &rを付与しました！" to player
+            send "&7OLD&c&l連射弓 &7をゲットした！" to arg 1
+        if arg 2 is "lb":
+            give player bow of sharpness 1 named "&6| &c&l連射弓 &6|"
+            send "&c%arg 2% &rに &a[&6| &c&l連射弓 &6|&a] &rを付与しました！" to player
+            send "&c&l連射弓 &7をゲットした！" to arg 1
+        if arg 2 is "longbow":
+            give player bow of sharpness 1 named "&6| &c&l連射弓 &6|"
+            send "&c%arg 2% &rに &a[&6| &c&l連射弓 &6|&a] &rを付与しました！" to player
+            send "&c&l連射弓 &7をゲットした！" to arg 1
