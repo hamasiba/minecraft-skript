@@ -1,0 +1,22 @@
+command /privatememoedit <text> <text>:
+    aliases: /pme
+    trigger:
+        set {pmemo.%player%.%arg 1%} to "%arg 2%"
+        send "&a[&r%player%.%arg 1%&a] &rを &c%arg 2% &rにセットしました。" to player
+command /openmemoedit <text> <text>:
+    aliases: /ome
+    trigger:
+        set {omemo.%arg 1%} to "%arg 2%"
+        send "&a[&r%arg 1%&a] &rを &c%arg 2% &rにセットしました。" to player
+command /memoset <text> <text>:
+    permission: op
+    trigger:
+        set {%arg 1%} to "%arg 2%"
+        send "%arg 1% = %arg 2%" to player
+command /memoshow <text> <text>:
+    aliases: /ms
+    trigger:
+        if arg 1 is "p":
+            send "{pmemo.%player%.%arg 2%}" to player
+        if arg 1 is "o":
+            send "{omemo.%arg 2%}" to player
