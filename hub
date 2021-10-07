@@ -3,3 +3,8 @@ on click:
     player's tool is golden axe
     name of player's tool is "&6&l| &cロビー&eへ戻る &6&l|"
     execute console command "mvtp world %player%"
+command /get <hub|etc>:
+    permission: give.skript
+    trigger:
+        if arg 1 is "hub":
+            give player golden axe of sharpness 1 named "&6&l| &cロビー&eへ戻る &6&l|"
