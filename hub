@@ -1,0 +1,5 @@
+on click:
+    # HUBに戻る
+    player's tool is golden axe
+    name of player's tool is "&6&l| &cロビー&eへ戻る &6&l|"
+    execute console command "mvtp world %player%"
