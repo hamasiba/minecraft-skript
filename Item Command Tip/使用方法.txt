@@ -1,0 +1,7 @@
+/itemtagconfigset <1~6のID> <itemname|command1|command2|command3> <内容>
+
+<1~6のID> を選択
+<itemname>でコマンドを埋め込むアイテム名を選択
+<command1~3>で1~3個目のコマンドを設定
+
+反応するアイテムは中のプログラムを書き換えてください。
