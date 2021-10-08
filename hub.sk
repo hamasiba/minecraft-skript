@@ -1,7 +1,13 @@
+command /hubworldset <text>:
+	aliases: /hws
+	permission: give.skript
+	trigger:
+		set {lobbyworld} to "%arg 1%"
+		send "&4[&cLobby Teleporter&4] &rロビーのワールドを&a%arg 1%&rに設定しました。" to player
 on right click with golden axe:
     # HUBに戻る
     name of player's tool is "&6&l| &cロビー&eへ戻る &6&l|"
-    execute console command "mvtp world %player%"
+    execute console command "mvtp {lobbyworld} %player%"
 command /get <text>:
     permission: give.skript
     trigger:
