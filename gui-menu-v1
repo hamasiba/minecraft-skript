@@ -1,0 +1,10 @@
+command /menu:
+    trigger;
+        open chest with 3 row named "&c- &eサーバーメニュー &c-" to player
+        set slot 10 of player's current inventory to bow named "&cロビーへ戻る"
+
+on inventory click:
+    if name of player's current inventory contain "&c- &eサーバーメニュー &c-":
+        cancel event
+        if name of clicked is "&cロビーへ戻る":
+            execute console command "mvtp world %player%"
