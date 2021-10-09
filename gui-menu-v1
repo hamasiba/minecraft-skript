@@ -7,4 +7,4 @@ on inventory click:
     if name of player's current inventory contain "&c- &eサーバーメニュー &c-":
         cancel event
         if name of clicked item is "&cロビーへ戻る":
-            execute console command "mvtp world %player%"
+            execute console command "mvtp %player% world"
