@@ -2,7 +2,7 @@ command /hubworldset <text>:
 	aliases: /hws
 	permission: give.skript
 	trigger:
-		set {lobbyworld} to "%arg 1%"
+		set {lobbyworld} to arg-1
 		send "&4[&cLobby Teleporter&4] &rロビーのワールドを&a%arg 1%&rに設定しました。" to player
 on right click with golden axe:
     # HUBに戻る
@@ -11,5 +11,5 @@ on right click with golden axe:
 command /get <text>:
     permission: give.skript
     trigger:
-        if arg 1 is "hub":
+        if arg-1 is "hub":
             give player golden axe of sharpness 1 named "&6&l| &cロビー&eへ戻る &6&l|"
