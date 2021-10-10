@@ -1,0 +1,35 @@
+# 前提プラグイン: Multiverse-core, Skript, SkQuery
+
+command /playermenu:
+    aliases: /pm
+    trigger:
+        open chest with 1 row named "&a%player% &rさんのインフォメーション" to player
+        set slot 8 of player's current inventory to bow named "&cサーバーから切断する"
+        set slot 0 of player's current inventory to bow named "&a&nロビーへ戻る"
+
+command /adminmenu <number>:
+    aliases: /am
+    permission: op
+    trigger:
+        if arg-1 is no set:
+            open chest 1 row named "サーバー管理" to player
+            set slot 0 of player's current inventory to redstone block named "&c&nサーバーを停止する"
+            set slot 0 of player's current inventory to glass named "&aサーバーのデータを保存する"
+            
+on inventory click:
+    if name of player's current inventory contain "&a%player% &rさんのインフォメーション":
+        cancel event
+        if name of clicked item is "&a&nロビーへ戻る":
+            execute console command "mvtp %player% world"
+		    if name of clicked item is "&cサーバーから切断する":
+            execute console command "kick %player% &cサーバーから切断しました。&rまた来てね！"
+
+on inventory click:
+    if name of player's current inventory contain "サーバー管理":
+        cancel event
+        if name of clicked item is "&c&nサーバーを停止する":
+            broadcast "&cあと5秒でサーバーが停止されます"
+            wait 5 second
+            execute console command "stop"
+		    if name of clicked item is "&aサーバーのデータを保存する":
+            execute console command "save-all"
