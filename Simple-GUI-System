@@ -13,7 +13,7 @@ command /adminmenu <number>:
     trigger:
         if arg-1 is no set:
             open chest 1 row named "サーバー管理" to player
-            set slot 0 of player's current inventory to redstone block named "&c&nサーバーを停止する"
+            set slot 0 of player's current inventory to redstone_block named "&c&nサーバーを停止する"
             set slot 0 of player's current inventory to glass named "&aサーバーのデータを保存する"
             
 on inventory click:
