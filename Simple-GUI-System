@@ -21,7 +21,7 @@ on inventory click:
         cancel event
         if name of clicked item is "&a&nロビーへ戻る":
             execute console command "mvtp %player% world"
-		    if name of clicked item is "&cサーバーから切断する":
+	if name of clicked item is "&cサーバーから切断する":
             execute console command "kick %player% &cサーバーから切断しました。&rまた来てね！"
 
 on inventory click:
@@ -31,5 +31,5 @@ on inventory click:
             broadcast "&cあと5秒でサーバーが停止されます"
             wait 5 second
             execute console command "stop"
-		    if name of clicked item is "&aサーバーのデータを保存する":
+	if name of clicked item is "&aサーバーのデータを保存する":
             execute console command "save-all"
