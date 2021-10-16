@@ -1,0 +1,31 @@
+command /join <number>:
+    trigger:
+        set {%arg-1%.player.battle} to "%player%"
+        send "設定しました。あなたは%arg 1%番目ですね。" to player
+        send "&7設定しました。 [%arg-1%&7.player.battle] = %player%" to player
+command /show <text>:
+    permission: op
+    trigger:
+        send "&a%arg-1% &rは" to player
+        send "%{@%arg-1%}%" to player
+command /levels:
+    trigger:
+        send "&6[&eSuperPvP&6] &rあなたのレベルは&c%{%player%.point.battle}%&rです！" to player
+on damage:
+    send "&7Attack &c%attacker% &7Victim &c%victim%" to {1.player.battle}
+    send "&7Attack &c%attacker% &7Victim &c%victim%" to {2.player.battle}
+on death:
+    if victim is "%player%":
+        if attacker is {1.player.battle}:
+            broadcast "&6[&eSuperPvP&6] &a%{1.player.battle}% &rwon!"
+            broadcast "&6[&eSuperPvP&6] &c%{2.player.battle}% &close..."
+            add 100 {%{1.player.battle}%.point.battle}
+            add 10 {%{2.player.battle}%.point.battle}
+            broadcast "二人には経験値を付与しました！ &c/levels &rで確認してね！"
+            broadcast "&6[&eSuperPvP&6] &cStop game!"
+        if attacker is {2.player.battle}:
+            broadcast "&6[&eSuperPvP&6] &a%{2.player.battle}% &rwon!"
+            broadcast "&6[&eSuperPvP&6] &c%{1.player.battle}% &close..."
+            add 100 {%{2.player.battle}%.point.battle}
+            add 10 {%{1.player.battle}%.point.battle}
+            broadcast "&6[&eSuperPvP&6] &cStop game!"
